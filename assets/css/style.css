@@ -3,38 +3,16 @@
     top:0;
     z-index: 1;
 }
-/* 
-ul {
-    height: unset;
+#sub-header{
+    padding-top: 20px;
 }
-.dropdown-content li {
+#gifSpace{
+    margin-top:10px;
+}
+
+.gifStill{
     margin: 5px 0px;
-    min-height: unset;
 }
-
-.btn-floating{
-    line-height: 56px;
+#addBtns{
+    overflow: auto;
 }
-
-nav ul a.btn, nav ul a.btn-large, nav ul a.btn-small, nav ul a.btn-large, nav ul a.btn-flat, nav ul a.btn-floating{
-    margin: 0px 2px;
-}
-
-.dropdown-content li > a, .dropdown-content li > span{
-    display: list-item;
-    color: #fff;
-    line-height: 11px;
-}
-
-.btn {
-    border-radius: 10px;
-}
-
-.dropdown-content{
-    box-shadow: none;
-    -webkit-box-shadow: none;
-}
-
-.no-background{
-    background-color: rgba(0, 0, 0, 0);
-} */
