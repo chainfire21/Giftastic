@@ -3,13 +3,11 @@ $(document).ready(function () {
     $('.fixed-action-btn').floatingActionButton();
 
     $("body").on("click", ".gifButton", function (e) {
-        console.log($(this).text());
         let queryURL = `https://api.giphy.com/v1/gifs/search?q=${$(this).text()}&api_key=EQQpWAWmSCs1ZQB5CW7mD0dV9HCPnuYh&limit=12&rating=g`;
         $.ajax({
             url: queryURL,
             method: "GET",
         }).then(function (response) {
-            console.log(response);
             for (let i = 0; i < response.data.length; i += 3) {
                 let c1 = $("<img>").attr({ "data-state": "still", "data-moving": response.data[i].images.fixed_height.url, "data-still": response.data[i].images.fixed_height_still.url, src: response.data[i].images.fixed_height_still.url, style: `height:${response.data[i].images.fixed_height_still.height}px;`, class: "gifStill col m4 s12" });
                 let c2 = $("<img>").attr({ "data-state": "still", "data-moving": response.data[i + 1].images.fixed_height.url, "data-still": response.data[i + 1].images.fixed_height_still.url, src: response.data[i + 1].images.fixed_height_still.url, style: `height:${response.data[i + 1].images.fixed_height_still.height}px;`, class: "gifStill col m4 s12" });
@@ -21,11 +19,9 @@ $(document).ready(function () {
 
     $("form").submit(function (e) {
         e.preventDefault();
-        console.log($("#search").val());
         let i = 0;
         $("#addBtns").prepend($("<li>").html($("<a>").addClass("waves-effect waves-light btn gifButton").text($("#search").val().trim())));
         $(".gifButton").each(function () {
-            console.log("inside the each function: " + $(this) + " and i: " + i);
             i++;
             if (i > 8) {
                 this.remove();
